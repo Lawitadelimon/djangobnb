@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter} from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/navbar/Navbar";
 
-const geistSans = Inter({ subsets: ['latin']});
+const inter = Inter({ subsets: ['latin']});
+
+
 
 export const metadata: Metadata = {
   title: "Djangobnb",
@@ -16,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={geistSans.className}>{children}
+      <body className={ inter.className}>
+        <Navbar />
+
+        <div className="pt-32">
+          {children}
+        </div>
       </body>
     </html>
   );
